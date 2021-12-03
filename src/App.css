@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-family: cursive;
+  color: teal;
+}
+th{
+  color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(139, 116, 161);
+}
+
+.Table{
+  margin-left: 75vh;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.coloredG{
+  color: darkgreen;
+  text-align: center;
+}
+.coloredR{
+  color: red;
+  text-align: center;
+}
