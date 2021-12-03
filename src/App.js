@@ -24,9 +24,22 @@ class App extends React.Component {
           DataisLoaded: true,
         });
       });
-    await fetch(
-      "http://data.fixer.io/api/2021-12-02?access_key=532b07264af83b6f9cf5de665ca2b3be"
-    )
+
+      let url="";
+      {
+        var today = new Date();
+        var yesterday = new Date(today);
+        yesterday.setDate(today.getDate() - 1);
+        var month = today.getMonth() + 1
+        let yesterday2 = yesterday.getFullYear() + '-' + month + '-';
+        if(yesterday.getDate()<=9){
+          yesterday2+='0';
+        }
+        yesterday2+=yesterday.getDate()
+        console.log(yesterday2);
+        url = "http://data.fixer.io/api/"+yesterday2+"?access_key=532b07264af83b6f9cf5de665ca2b3be";
+      }
+      await fetch("http://data.fixer.io/api/2021-12-02?access_key=532b07264af83b6f9cf5de665ca2b3be")
       .then((res) => res.json())
       .then((json) => {
         this.setState({
